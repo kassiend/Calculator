@@ -1,7 +1,7 @@
 [versions]
 agp = "8.1.4"
 android-compileSdk = "34"
-android-minSdk = "24"
+android-minSdk = "28"
 android-targetSdk = "34"
 androidx-activityCompose = "1.8.2"
 androidx-appcompat = "1.6.1"
@@ -15,6 +15,8 @@ compose-compiler = "1.5.8"
 compose-plugin = "1.5.11"
 junit = "4.13.2"
 kotlin = "1.9.21"
+insetx = "0.1.0-alpha10"
+neumorph-design = "0.7.7"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -32,6 +34,8 @@ compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = 
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
+insetx = { module = "com.moriatsushi.insetsx:insetsx", version.ref = "insetx" }
+nuemorphism = { module = "com.github.adrianwitaszak:neumorph-ui", version.ref = "neumorph-design" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
