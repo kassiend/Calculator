@@ -1,9 +1,10 @@
-package ui
+package ui.components
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
+import androidx.compose.material3.ColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
@@ -31,17 +32,16 @@ private val LightColorPalette = lightColors(
     onSurface = Color.Black,
 )
 
-@Composable
-fun NeumorphismTheme(isDarkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
-    val colors = if (isDarkTheme) {
-        DarkColorPalette
-    } else {
-        LightColorPalette
-    }
 
+
+@Composable
+fun NeumorphismTheme(colorScheme: ColorScheme, content: @Composable() () -> Unit) {
     MaterialTheme(
-        colors = colors,
-        shapes = Shapes,
+        colorScheme = MaterialTheme.colorScheme.copy(
+            background = colorScheme.background,
+            onBackground = colorScheme.onBackground
+        ),
+        shapes = MaterialTheme.shapes,
         content = content
     )
 }

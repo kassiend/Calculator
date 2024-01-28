@@ -1,13 +1,16 @@
-package ui
+package ui.components
 
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.luminance
 
 object AppColors {
     val Purple200 = Color(0xFFBB86FC)
     val Purple500 = Color(0xFF6200EE)
+    val CalculatorBackground = Color(0xFFA5A5A5)
 
     object Light {
         val Background = Color(0xFFDCDCDC)
@@ -24,9 +27,14 @@ object AppColors {
     }
 
     @Composable
-    fun lightShadow() = if (androidx.compose.material.MaterialTheme.colors.isLight) Light.LightShadow else Dark.LightShadow
+    fun ColorScheme.isLight() = this.background.luminance() > 0.5
 
     @Composable
-    fun darkShadow() = if (androidx.compose.material.MaterialTheme.colors.isLight) Light.DarkShadow else Dark.DarkShadow
+    fun lightShadow() = if (MaterialTheme.colorScheme.isLight()) Light.LightShadow else Dark.LightShadow
+
+    @Composable
+    fun darkShadow() = if (MaterialTheme.colorScheme.isLight()) Light.DarkShadow else Dark.DarkShadow
 
 }
+
+
