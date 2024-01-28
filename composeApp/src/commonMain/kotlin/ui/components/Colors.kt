@@ -10,6 +10,9 @@ import androidx.compose.ui.graphics.luminance
 object AppColors {
     val Purple200 = Color(0xFFBB86FC)
     val Purple500 = Color(0xFF6200EE)
+
+    val CalculatorTextHintColor = Color(0x263F474E)
+    val CalculatorTextInputColor = Color(0xFF3F474E)
     val CalculatorBackground = Color(0xFFA5A5A5)
 
     object Light {

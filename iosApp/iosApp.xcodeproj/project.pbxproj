@@ -11,15 +11,23 @@
 		058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */; };
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
+		871D2A1D2B6689E700A384F0 /* digital_mono_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 871D2A192B6689E700A384F0 /* digital_mono_italic.ttf */; };
+		871D2A1E2B6689E700A384F0 /* digital_italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 871D2A1A2B6689E700A384F0 /* digital_italic.ttf */; };
+		871D2A1F2B6689E700A384F0 /* digital_mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 871D2A1B2B6689E700A384F0 /* digital_mono.ttf */; };
+		871D2A202B6689E700A384F0 /* digital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 871D2A1C2B6689E700A384F0 /* digital.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		058557BA273AAA24004C7B11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		058557D8273AAEEB004C7B11 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
-		7555FF7B242A565900829871 /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = .app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7555FF7B242A565900829871 /* .app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = .app; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		871D2A192B6689E700A384F0 /* digital_mono_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digital_mono_italic.ttf; sourceTree = "<group>"; };
+		871D2A1A2B6689E700A384F0 /* digital_italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digital_italic.ttf; sourceTree = "<group>"; };
+		871D2A1B2B6689E700A384F0 /* digital_mono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digital_mono.ttf; sourceTree = "<group>"; };
+		871D2A1C2B6689E700A384F0 /* digital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = digital.ttf; sourceTree = "<group>"; };
 		AB3632DC29227652001CCB65 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +68,10 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				871D2A1A2B6689E700A384F0 /* digital_italic.ttf */,
+				871D2A192B6689E700A384F0 /* digital_mono_italic.ttf */,
+				871D2A1B2B6689E700A384F0 /* digital_mono.ttf */,
+				871D2A1C2B6689E700A384F0 /* digital.ttf */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
@@ -136,7 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				058557D9273AAEEB004C7B11 /* Preview Assets.xcassets in Resources */,
+				871D2A1E2B6689E700A384F0 /* digital_italic.ttf in Resources */,
+				871D2A1F2B6689E700A384F0 /* digital_mono.ttf in Resources */,
+				871D2A1D2B6689E700A384F0 /* digital_mono_italic.ttf in Resources */,
 				058557BB273AAA24004C7B11 /* Assets.xcassets in Resources */,
+				871D2A202B6689E700A384F0 /* digital.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
