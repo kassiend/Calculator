@@ -1,16 +1,8 @@
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.consumeWindowInsets
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -22,14 +14,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import com.moriatsushi.insetsx.rememberWindowInsetsController
 import com.moriatsushi.insetsx.systemBars
 import ui.Content
 import ui.Toolbar
 import ui.components.AppColors
 import ui.components.NeumorphismTheme
-import ui.components.Nightlight
 
 @Composable
 fun App() {
@@ -48,8 +38,10 @@ fun App() {
     NeumorphismTheme(
         colorScheme = if (useDarkMode) darkColorScheme().copy(
             background = AppColors.Dark.Background,
+            onTertiary = AppColors.Dark.TextColor
         ) else lightColorScheme().copy(
             background = AppColors.Light.Background,
+            onTertiary = AppColors.Light.TextColor
         )
     ) {
         key(useDarkMode) {

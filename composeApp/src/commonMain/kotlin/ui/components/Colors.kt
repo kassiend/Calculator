@@ -14,6 +14,7 @@ object AppColors {
     val CalculatorTextHintColor = Color(0x263F474E)
     val CalculatorTextInputColor = Color(0xFF3F474E)
     val CalculatorBackground = Color(0xFFA5A5A5)
+    val CalculatorNumPadColor = Color(0xFF627785)
 
     object Light {
         val Background = Color(0xFFDCDCDC)

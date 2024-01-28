@@ -39,7 +39,8 @@ fun NeumorphismTheme(colorScheme: ColorScheme, content: @Composable() () -> Unit
     MaterialTheme(
         colorScheme = MaterialTheme.colorScheme.copy(
             background = colorScheme.background,
-            onBackground = colorScheme.onBackground
+            onBackground = colorScheme.onBackground,
+            tertiary = colorScheme.onTertiary
         ),
         shapes = MaterialTheme.shapes,
         content = content
