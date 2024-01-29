@@ -7,7 +7,7 @@ import org.jetbrains.skia.Typeface
 
 actual val digitalFontFamily: FontFamily
     get() = FontFamily(
-        Typeface(loadCustomFont("digital")),
+        Typeface(loadCustomFont("digital_mono")),
     )
 
 //TODO Required here list of fonts, but only one font included

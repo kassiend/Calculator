@@ -47,11 +47,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIAppFonts</key>
-    <array>
-        <string>digital.ttf</string>
-        <string>digital_italic.ttf</string>
-        <string>digital_mono.ttf</string>
-        <string>digital_mono_italic</string>
-    </array>
+	<array>
+		<string>digital_mono.ttf</string>
+	</array>
 </dict>
 </plist>

@@ -1,20 +1,19 @@
 package ui
 
-import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -30,7 +29,8 @@ fun Button(
     modifier: Modifier = Modifier
         .widthIn()
         .heightIn(),
-    text: String = "0",
+    text: Char,
+    onClick: (char: Char) -> Unit
 ) {
     Box(
         modifier = Modifier
@@ -38,6 +38,12 @@ fun Button(
             .heightIn()
             .bounceClick()
             .then(modifier)
+            .clickable(
+                indication = null,
+                interactionSource = remember { MutableInteractionSource() } // This is mandatory
+            ) {
+                onClick(text)
+            }
     ) {
         Card(
             modifier = Modifier
@@ -59,7 +65,7 @@ fun Button(
             ) {
                 Text(
                     modifier = Modifier.align(Alignment.Center),
-                    text = text,
+                    text = text.toString(),
                     color = AppColors.CalculatorNumPadColor,
                     fontSize = 26.sp,
                     textAlign = TextAlign.Center

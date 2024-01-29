@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -21,12 +20,16 @@ import androidx.compose.material.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kz.startmobile.calculator.digitalFontFamily
+import kz.startmobile.calculator.font
 import nuemorphism.LightSource
 import nuemorphism.neu
 import nuemorphism.shape.Flat
@@ -38,22 +41,34 @@ import ui.components.AppColors.CalculatorBackground
 fun Content(
     modifier: Modifier = Modifier,
 ) {
+    val vm: ViewModel = remember {
+        ViewModel()
+    }
+
     Column (
         modifier = modifier
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceAround,
     ) {
-        HeadContent()
-        ButtonContent()
+        HeadContent(
+            resultTextProvider = { vm.resultText.value.ifBlank { "" } }
+        )
+        ButtonContent(
+            onClick = {
+                vm.click(it)
+            }
+        )
     }
 }
 
 @Composable
-fun HeadContent() {
+fun HeadContent(
+    resultTextProvider: () -> String,
+) {
     Card(
         modifier = Modifier
-            .width(320.dp)
+            .width(356.dp)
             .height(110.dp)
             .neu(
                 lightShadowColor = AppColors.lightShadow(),
@@ -75,7 +90,9 @@ fun HeadContent() {
         ) {
             Text(
                 text = "888888888",
-                fontFamily = digitalFontFamily,
+                fontFamily = FontFamily(
+                    font("Digital", "digital_mono", FontWeight.Normal, FontStyle.Normal)
+                ),
                 fontSize = 58.sp,
                 color = AppColors.CalculatorTextHintColor,
                 modifier = Modifier
@@ -86,8 +103,10 @@ fun HeadContent() {
                 textAlign = TextAlign.End
             )
             Text(
-                text = "123412",
-                fontFamily = digitalFontFamily,
+                text = resultTextProvider.invoke(),
+                fontFamily = FontFamily(
+                    font("Digital", "digital_mono", FontWeight.Normal, FontStyle.Normal)
+                ),
                 fontSize = 58.sp,
                 color = AppColors.CalculatorTextInputColor,
                 modifier = Modifier
@@ -102,14 +121,16 @@ fun HeadContent() {
 }
 
 @Composable
-fun ButtonContent() {
-    val itemsList = listOf("C", "(", ")", "÷", "7", "8", "9", "*", "4", "5", "6", "-", "1", "2", "3", "+", "⌫", "0", ".", "=")
+fun ButtonContent(
+    onClick: (char: Char) -> Unit
+) {
+    val itemsList = listOf('C', '^', '%', '÷', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '⌫', '0', '.', '=')
     LazyVerticalGrid(
         modifier = Modifier
-            .width(360.dp)
+            .widthIn(min = 360.dp)
             .heightIn(min = 520.dp),
-        contentPadding = PaddingValues(vertical = 16.dp),
-        columns = GridCells.Adaptive(80.dp),
+        contentPadding = PaddingValues(vertical = 16.dp, horizontal = 16.dp),
+        columns = GridCells.Adaptive(70.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp),
         horizontalArrangement = Arrangement.spacedBy(12.dp)
     ) {
@@ -119,7 +140,9 @@ fun ButtonContent() {
                     .widthIn()
                     .heightIn(),
                 text = item
-            )
+            ) {
+                onClick(it)
+            }
         }
 
     }
