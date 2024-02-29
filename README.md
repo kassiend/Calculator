@@ -1,14 +1,20 @@
 This is a Kotlin Multiplatform project targeting Android, iOS.
 
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
+## Neumorphism calculator:
+Simple Calculator application, which demonstrates of usage Jetpack Compose Multiplatform.
+Special respect for https://github.com/sridhar-sp/compose-neumorphism, because current project adapted to Compose Multiplatform.
 
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+
+#### ▶️ Android & iOS:
+
+https://github.com/kassiend/Calculator/assets/70438541/508c1af0-576f-4d53-836d-b4812289a62f
+
+
+## Built with
+
+- [Kotlin](kotlinlang.org): Programming language
+- [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html): For building multi-platform applications in the single codebase.
+- [Jetpack/JetBrains Compose Multiplatform](https://www.jetbrains.com/lp/compose-multiplatform/): For a shared UI between multi-platforms i.e. Android and iOS in this project.
 
 
 Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
